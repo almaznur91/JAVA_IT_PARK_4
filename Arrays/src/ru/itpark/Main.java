@@ -14,7 +14,7 @@ public class Main {
             int[] nums= new int[n];
             for (int i=0;i<nums.length;i++);
             nums[n]= scanner.nextInt();
-            if 
+            ifdddd
         }
     };
 }
