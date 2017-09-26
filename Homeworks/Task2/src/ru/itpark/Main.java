@@ -4,68 +4,96 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
         // write your code here
-        int n1, n2;
-
-
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите первое число");
-        n1 = scanner.nextInt();
-        System.out.print("Введите второе число");
-        n2 = scanner.nextInt();
+        int choise;
+
+        int[] array = new int[100];
+        int count = 0;
+
+
         while (true) {
 
-            System.out.println("МЕНЮ:\n" +
-                    "1. Считать два числа\n" +
-                    "2. Сумма чисел вывод\n" +
-                    "3. Разность чисел вывод\n" +
-                    "4. Произведение вывод\n" +
+            System.out.println("\nМЕНЮ:\n" +
+                    "1. Показать массив - выводит только count-элементов\n" +
+                    "2. Добавить в начало\n" +
+                    "3. Добавить в конец\n" +
+                    "4. Удалить по позиции\n" +
                     "5. Выход");
 
-            int c = scanner.nextInt();
+            choise = scanner.nextInt();
 
-//            if (c == 1) {
-//                System.out.print("Введите первое число");
-//                n1 = scanner.nextInt();
-//                System.out.print("Введите второе число");
-//                n2 = scanner.nextInt();
-//
-//            } else if (c == 2) {
-//                System.out.println("Сумма: " + (n1 + n2));
-//
-//            } else if (c == 3) {
-//                System.out.println("Разность: " + (n1 - n2));
-//            } else if (c == 4) {
-//                System.out.println("Произвидение: " + (n1 * n2));
-//
-//            } else
-//                System.exit(0);
-
-            switch (c) {
+            switch (choise) {
                 case 1:
-                    System.out.println("Введите первое число");
-                    n1 = scanner.nextInt();
-                    System.out.println("Введите первое число");
-                    n2 = scanner.nextInt();
+
+                    for (int i = 0; i < count; i++) {
+                        System.out.print(array[i]);
+                    }
+
                     break;
                 case 2:
-                    System.out.println(n1+n2);
+
+                    if (count == 100) {
+                        System.out.println("Заполнено");
+                        break;
+                    }
+
+                    System.out.println("Введите число для добавления в начало");
+                    for (int a = count, b = count - 1; b >= 0; a = a - 1, b = b - 1) {
+                        array[a] = array[b];
+                    }
+                    array[0] = scanner.nextInt();
+                    count++;
+
                     break;
+
+
                 case 3:
-                    System.out.println(n1-n2);
+                    if (count == 100) {
+                        System.out.println("Заполнено");
+                        break;
+                    }
+                    System.out.println("Введите число для добавления в конец");
+                    array[count] = scanner.nextInt();
+                    count++;
+
                     break;
+
+
                 case 4:
-                    System.out.println(n1*n2);
+                    System.out.println("Введите число для удаления по позиции");
+                    int n = scanner.nextInt();
+
+
+                    if (n >= count) {
+                        System.out.println("Введите верное значение");
+                        break;
+                    }
+
+
+                    for (int a = n; a < count; a = a + 1)
+                        array[a] = array[a + 1];
+                    count--;
+
+
                     break;
+
+
                 case 5:
                     System.exit(0);
 
+                    break;
 
+                default:
+                    System.out.println("Введите верное значение");
 
-
+                    break;
             }
+
 
         }
     }
+
 }
