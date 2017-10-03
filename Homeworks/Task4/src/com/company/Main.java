@@ -65,10 +65,12 @@ public class Main {
                             case 4:
                                 //TODO: Получить элемент по индексу
                                 System.out.println("Введите номер элемннта для получения по индексу");
-                                lists
+                                System.out.println(lists[numberOfList].get(scanner.nextInt()));
                                 break;
                             case 5:
                                 //TODO: Заменить элемент в заданной позиции новым элементом
+
+
                                 break;
                             case 6:
                                 //TODO: Сортировка
