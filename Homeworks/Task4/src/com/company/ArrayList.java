@@ -36,15 +36,32 @@ public class ArrayList {
 
 
     public boolean delByInd(int index) {
-        if (index>=0||index<count){
-        for (int i = index; i < count - 1; i++) {
-            elements[i] = elements[i + 1];
-        }
-        count--;
-        return true;}
-        else {
+        if (index >= 0 || index < count) {
+            for (int i = index; i < count - 1; i++) {
+                elements[i] = elements[i + 1];
+            }
+            count--;
+            return true;
+        } else {
             return false;
         }
+    }
+
+
+    public void add(int element) {
+
+        if (elements.length == count) {
+
+            int[] tempArray = new int[(int) (elements.length * 1.5)];
+            for (int i = 0; i < count; i++) {
+                tempArray[i] = elements[i];
+                elements = tempArray;
+            }
+        }
+        elements[count] = element;
+        count++;
+
+
     }
 }
 

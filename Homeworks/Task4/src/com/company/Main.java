@@ -51,15 +51,21 @@ public class Main {
                         switch (choise) {
                             case 1:
                                 //TODO: добавить элемент в конец списка
+                                System.out.println("Введите значение элемента для занесения в конец списка");
+                                lists[numberOfList].add(scanner.nextInt());
+
                                 break;
                             case 2:
                                 //TODO: добавить элемент в начало списка
+
                                 break;
                             case 3:
                                 //TODO: Вставить элемент в заданную позицию со сдвигом
                                 break;
                             case 4:
                                 //TODO: Получить элемент по индексу
+                                System.out.println("Введите номер элемннта для получения по индексу");
+                                lists
                                 break;
                             case 5:
                                 //TODO: Заменить элемент в заданной позиции новым элементом
