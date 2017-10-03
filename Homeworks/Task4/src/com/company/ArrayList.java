@@ -67,6 +67,11 @@ public class ArrayList {
     public int get(int index) {
         return elements[index];
     }
+
+    public int replace(int index,int element) {
+        elements[index]= element;
+        return element;
+    }
 }
 
 
