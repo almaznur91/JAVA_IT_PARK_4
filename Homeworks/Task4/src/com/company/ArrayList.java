@@ -11,9 +11,6 @@ public class ArrayList {
 
     public ArrayList() {
         elements = new int[INITIAL_SIZE];
-//        for (int i=0;i<elements.length;i++){
-//            elements[i]=i;
-//        }
         count = 0;
     }
 
@@ -64,27 +61,33 @@ public class ArrayList {
         return elements[index];
     }
 
-    public int replace(int index, int element) {
+    public void replace(int index, int element) {
         elements[index] = element;
-        return element;
     }
 
-    public int addStart(int index) {
-        for (int i = 1; i < count - 2; i++) {
-            elements[i] = elements[i + 1];
-        }
-        elements[0] = index;
-        return index;
-    }
-
-    public int isReturnIndex(int element) {
-        int a = -1;
-        for (int i = 0; i < count - 1; i++) {
-            if (elements[i] == element) {
-                a = i;
+    public void addStart(int index) {
+        if (elements.length == count) {
+            int[] tempArray = new int[(int) (elements.length * 1.5)];
+            for (int i = 0; i < count; i++) {
+                tempArray[i] = elements[i];
+                elements = tempArray;
             }
         }
-        return a;
+        for (int i = count - 1; i >= 0; i--) {
+
+            elements[i + 1] = elements[i];
+        }
+        elements[0] = index;
+        count++;
+    }
+
+    public int ReturnIndex(int element) {
+        for (int i = 0; i < count; i++) {
+            if (elements[i] == element) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public void insertElement(int element, int index) {
@@ -95,7 +98,7 @@ public class ArrayList {
                 elements = tempArray;
             }
         }
-        for (int i = index; i < count - 2; i++) {
+        for (int i = index; i < count; i++) {
             elements[i + 1] = elements[i];
         }
         elements[index] = element;
@@ -121,10 +124,17 @@ public class ArrayList {
         }
     }
 
-//    public void show() {
-//        for (int i = 0; i <= count; i++) {
-//        }
-//    }
+    public void reverse() {
+        int temp;
+        int f = count - 1;
+
+        for (int i = 0; i < count / 2; i++, f--) {
+            temp = elements[i];
+            elements[i] = elements[f];
+            elements[f] = temp;
+        }
+    }
+
 
 }
 

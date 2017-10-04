@@ -91,7 +91,8 @@ public class Main {
                                 break;
 
                             case 7:
-                                //TODO: Развернуть(доделать)
+                                lists[numberOfList].reverse();
+
                                 break;
 
                             case 8:
@@ -106,15 +107,15 @@ public class Main {
 
                                 System.out.println("Введите число для поиска массиву");
 
-                                if (lists[numberOfList].isReturnIndex(scanner.nextInt()) == -1) {
+                                if (lists[numberOfList].ReturnIndex(scanner.nextInt()) == -1) {
                                     System.out.println("Введеного значение не обнаружено!");
+                                    break;
                                 }
-                                System.out.println(lists[numberOfList].isReturnIndex(scanner.nextInt()));
+                                System.out.println(lists[numberOfList].ReturnIndex(scanner.nextInt()));
                                 break;
 
                             case 10:
-                                //TODO: Показать хранилище
-
+                                System.out.println(lists[numberOfList].outString());
                                 break;
 
                             case 11:
