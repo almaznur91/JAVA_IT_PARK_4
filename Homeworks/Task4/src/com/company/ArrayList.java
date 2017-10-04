@@ -17,7 +17,6 @@ public class ArrayList {
         count = 0;
     }
 
-
     public int[] getArray() {
         int[] array1 = new int[count];
         for (int i = 0; i < count; i++) {
@@ -47,7 +46,6 @@ public class ArrayList {
         }
     }
 
-
     public void add(int element) {
 
         if (elements.length == count) {
@@ -60,18 +58,73 @@ public class ArrayList {
         }
         elements[count] = element;
         count++;
-
-
     }
 
     public int get(int index) {
         return elements[index];
     }
 
-    public int replace(int index,int element) {
-        elements[index]= element;
+    public int replace(int index, int element) {
+        elements[index] = element;
         return element;
     }
-}
 
+    public int addStart(int index) {
+        for (int i = 1; i < count - 2; i++) {
+            elements[i] = elements[i + 1];
+        }
+        elements[0] = index;
+        return index;
+    }
+
+    public int isReturnIndex(int element) {
+        int a = -1;
+        for (int i = 0; i < count - 1; i++) {
+            if (elements[i] == element) {
+                a = i;
+            }
+        }
+        return a;
+    }
+
+    public void insertElement(int element, int index) {
+        if (elements.length == count) {
+            int[] tempArray = new int[(int) (elements.length * 1.5)];
+            for (int i = 0; i < count; i++) {
+                tempArray[i] = elements[i];
+                elements = tempArray;
+            }
+        }
+        for (int i = index; i < count - 2; i++) {
+            elements[i + 1] = elements[i];
+        }
+        elements[index] = element;
+        count++;
+    }
+
+    public void sort() {
+        int min;
+        int index;
+        int temp;
+        for (int n = 0; n < count; n++) {
+            min = elements[n];
+            index = n;
+            for (int i = n + 1; i < count; i++) {
+                if (min > elements[i]) {
+                    min = elements[i];
+                    index = i;
+                }
+            }
+            temp = elements[index];
+            elements[index] = elements[n];
+            elements[n] = temp;
+        }
+    }
+
+//    public void show() {
+//        for (int i = 0; i <= count; i++) {
+//        }
+//    }
+
+}
 
