@@ -27,8 +27,11 @@ public class Main {
         programs3[0] = new Program("Предвыборная компания Путина", LocalTime.parse("00:00"), LocalTime.parse("23:59"));
 
 
-        TV tv = new TV(channels, "Zenith");
-        TVConsole console = new TVConsole(tv);
+
+        TV.setInstance(TV.getTV());
+
+
+        TVConsole console = new TVConsole(TV.getTV());
         console.menu();
 
 
