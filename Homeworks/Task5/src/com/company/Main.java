@@ -27,19 +27,15 @@ public class Main {
         programs3[0] = new Program("Предвыборная компания Путина", LocalTime.parse("00:00"), LocalTime.parse("23:59"));
 
 
+        TV tv = TV.getInstance(channels);
 
-        TV.setInstance(TV.getTV());
-
-
-        TVConsole console = new TVConsole(TV.getTV());
+        TVConsole console = new TVConsole(tv);
         console.menu();
-
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Нажимаем на кнопку: ");
             console.pushButton(scanner.nextInt());
         }
-
     }
 }

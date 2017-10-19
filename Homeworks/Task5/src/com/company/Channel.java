@@ -7,6 +7,10 @@ public class Channel {
     private Program[] programs;
     private String nameChannel;
 
+    public void setNameChannel(String nameChannel) {
+        this.nameChannel = nameChannel;
+    }
+
     public Channel(Program[] programs, String nameChannel) {
         this.programs = programs;
         this.nameChannel = nameChannel;
