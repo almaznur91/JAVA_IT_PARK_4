@@ -77,6 +77,7 @@ public class LinkedList implements List {
     @Override
     public void remove(Object object) {
 
+<<<<<<< HEAD
         if (object.equals(head.value)) {
             head = head.next;
             count--;
@@ -99,6 +100,23 @@ public class LinkedList implements List {
     @Override
     public int indexOf(Object object) {
         return 0;
+=======
+
+    }
+
+    @Override
+    public int indexOf(Object object) {
+        Node currentnode=head;
+        int cound=0;
+        while (currentnode!=null){
+        if (object.equals(currentnode.value)){
+            return cound;
+        }
+        cound++;
+        currentnode=currentnode.next;}
+
+        return -1;
+>>>>>>> b132824fdb44c5855147292c2ce7c3215c9657fc
     }
 
     @Override
@@ -111,6 +129,10 @@ public class LinkedList implements List {
         return new LinkedListIterator();
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b132824fdb44c5855147292c2ce7c3215c9657fc
     private class LinkedListIterator implements Iterator {
 
         private Node currentNode = head;
