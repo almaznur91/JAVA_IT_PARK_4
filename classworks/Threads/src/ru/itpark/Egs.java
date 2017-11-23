@@ -1,3 +1,5 @@
+
+
 package ru.itpark;
 
 public class Egs extends Thread {
@@ -7,5 +9,3 @@ public class Egs extends Thread {
         }
     }
 }
-
-
